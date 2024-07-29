@@ -1,0 +1,8 @@
+spring:
+  data:
+    mongodb:
+      database: test
+
+app:
+  scheduling:
+    enabled: false

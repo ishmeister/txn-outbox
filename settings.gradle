@@ -1,0 +1,4 @@
+rootProject.name = 'txn-outbox'
+
+include 'order-service'
+//include 'shipping-service'
