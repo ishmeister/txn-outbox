@@ -38,19 +38,10 @@ import static org.mockito.Mockito.doThrow;
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
 )
 @AutoConfigureWebTestClient
-//@Testcontainers
 @ContextConfiguration(classes = {TestcontainersConfig.class, IntegrationTestConfig.class})
 @Tag("integration")
 @ActiveProfiles({"it"})
 class CreateOrderIT {
-
-//    @Container
-//    static MongoDBContainer mongoDB = new MongoDBContainer("mongo:5.0.21")
-//            .withExposedPorts(27017);
-//
-//    @Container
-//    static RabbitMQContainer rabbitMQ = new RabbitMQContainer("rabbitmq:3-management")
-//            .withExposedPorts(5672, 15672);
 
     @Autowired
     RabbitTemplate rabbitTemplate;
@@ -84,12 +75,6 @@ class CreateOrderIT {
         amqpAdmin.purgeQueue(orderCreatedQueue.getName());
         outboxDomainEventRepository.deleteAll();
     }
-
-//    @DynamicPropertySource
-//    static void configureProperties(DynamicPropertyRegistry registry) {
-//        registry.add("spring.rabbitmq.port", rabbitMQ::getAmqpPort);
-//        registry.add("spring.data.mongodb.uri", mongoDBContainer::getReplicaSetUrl);
-//    }
 
     @Test
     void createOrder_shouldCreateOrderAndPublishDomainEvent() {
