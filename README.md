@@ -1,7 +1,7 @@
 # About this repository
 
 Sample code from the
-article [Transactional Outbox Pattern with Spring Boot](https://ishbhana.hashnode.dev/transactional-outbox-pattern-with-spring-boot)
+article [Implementing the Transactional Outbox Pattern with Spring Boot](https://ishbhana.hashnode.dev/transactional-outbox-pattern-with-spring-boot)
 by Ish Bhana.
 
 ### Running the example
